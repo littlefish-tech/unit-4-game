@@ -1,0 +1,47 @@
+h1 {
+    background-color: #cb6f34;
+    margin-right: 60%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+}
+
+.pContainer {
+    background-color: #fde6d0;
+    margin-right: 70%;
+    padding-top: 20px;
+    padding-bottom: 80px;
+    color: #98b967;
+    font-weight: bold;
+}
+
+
+#computerNumber {
+    background-color: #54ca86;
+    color: purple;
+    margin-top: 10px;
+    width: 200px;
+    height: 100px;
+    float: left;
+    font-size: 50px;;
+}
+.scoreContainer {
+    float: left;
+    margin: 10px;
+}
+#wlTimes {
+    background-color: #43fdf9;
+    color: black;
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+    float: left;
+}
+
+.crystalImage {
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+

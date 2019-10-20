@@ -20,15 +20,12 @@
     <div class="scoreContainer">
         <div id="computerNumber"></div>
         <div id="wlTimes">
-            <div id = "winTimes">Wins: </div>
-            <div id = "lossTime">Losses: </div>
+            <div id = "win-text">Wins: </div>
+            <div id = "loss-text">Losses: </div>
         </div>
     </div>
+
     <div id = "crystals">
-        <img class="crystalImage" src="assets/images/1.jpg">
-        <img class="crystalImage" src="assets/images/2.jpg">
-        <img class="crystalImage" src="assets/images/3.jpg">
-        <img class="crystalImage" src="assets/images/4.jpg">
     </div>
     <p>Your total score is:</p>
     <div id = "totalScore">
@@ -40,6 +37,36 @@
         document.getElementById("computerNumber").innerHTML=Math.floor(Math.random()*100)
         $("#computerNumber").text(targetNumber);
 
+        var counter = 0;
+        var image = ["https://i.pinimg.com/originals/31/9b/f3/319bf39c84987e8ae901e2d6706af3d9.png", "https://i.pinimg.com/originals/cb/01/e6/cb01e6176e781fbed688fde80b422cbf.jpg", 
+        "https://stylizedbay.com/wp-content/uploads/2018/03/andrew-sunarko-render1.jpg", 
+        "https://i.pinimg.com/originals/52/8f/1f/528f1f0644679a7a69e32cc730609fff.jpg"];
+        var numberOptions = [5, 11, 9, 7];
+        for (var i=0; i < numberOptions.length; i++) {
+            var imageCrystal = $("<img>");
+            imageCrystal.addClass("crystalImage");
+            imageCrystal.attr("src",image[i]);
+
+            imageCrystal.attr("data-crystalvalue", numberOptions[i]);
+            $("#crystals").append(imageCrystal);
+        }
+        $(".crystalImage").on("click",function() {
+            var crystalValue = ($(this).attr("data-crystalvalue"));
+            crystalValue = parseInt(crystalValue);
+            counter += crystalValue;
+
+            $("#totalScore").text("New Score: " + counter);
+
+            if(counter === targetNumber) {
+                alert("You Win!");
+                counter = 0;
+            }
+            else if (counter >= targetNumber) {
+                alert("You Lose!!");
+                counter = 0;
+            }
+
+        })
     </script>
 </body>
 </html>

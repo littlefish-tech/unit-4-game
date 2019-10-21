@@ -69,3 +69,7 @@ h1 {
     float: left;
     clear: both;
 }
+
+body {
+    background-color: pink;
+}

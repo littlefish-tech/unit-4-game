@@ -20,11 +20,13 @@
     <div class="scoreContainer">
         <div id="computerNumber"></div>
         <div id="wlTimes">
-            <div id = "win-text">Wins: </div>
-            <div id = "loss-text">Losses: </div>
+            <div>Wins: <span id = "win-text"></span></div>
+            <div>Losses: <span id = "loss-text"></span></div>
         </div>
+        <span>
+        </span>
     </div>
-    <div id = "crystals">
+    <div><span id = "crystals"></span>
     </div>
     <div class = "scoreContainersub">
         <div>
@@ -39,8 +41,17 @@
         var targetNumber;
         document.getElementById("computerNumber").innerHTML=Math.floor(Math.random()*100)
         $("#computerNumber").text(targetNumber);
-
+        var wins = 0;
+        var losses = 0;
         var counter = 0;
+        var winsText = document.getElementById("win-text");
+        var lossesText = document.getElementById("loss-text");
+
+        function updateDom() {
+            winsText.textContent = wins;
+            lossesText.textContent = losses;
+        }
+        updateDom()
         var image = ["https://i.pinimg.com/originals/31/9b/f3/319bf39c84987e8ae901e2d6706af3d9.png", "https://i.pinimg.com/originals/cb/01/e6/cb01e6176e781fbed688fde80b422cbf.jpg", 
         "https://stylizedbay.com/wp-content/uploads/2018/03/andrew-sunarko-render1.jpg", 
         "https://i.pinimg.com/originals/52/8f/1f/528f1f0644679a7a69e32cc730609fff.jpg"];
@@ -63,10 +74,12 @@
 
         if (counter === targetNumber) {
                 alert("You Win!");
+                win++;
                 counter = 0;
             }
         else if (counter >= targetNumber) {
-                alert("You Lose!!");
+                // alert("You Lose!!");
+                losses++;
                 counter = 0;
             }
 

@@ -77,10 +77,10 @@
             counter += crystalValue;
             // console.log(counter);
 
-        $("#totalScore").text("New Score: " + counter);
+        $("#totalScore").text(counter);
             console.log()
         if (counter === targetNumber) {
-                // alert("You Win!");
+                alert("You Win!");
                 wins++;
                 counter = 0;
                 targetNumber = randomIntFromInterval(19, 120);

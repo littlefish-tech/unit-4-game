@@ -23,11 +23,12 @@ h1 {
     width: 200px;
     height: 100px;
     float: left;
-    font-size: 50px;;
+    font-size: 50px;
 }
 .scoreContainer {
     float: left;
     margin: 10px;
+    clear: both;
 }
 #wlTimes {
     background-color: #43fdf9;
@@ -43,6 +44,7 @@ h1 {
     width: 80px;
     height: 80px;
     float: left;
+    margin: 10px;
 }
 
 .scoreDisplay {
@@ -60,9 +62,10 @@ h1 {
 }
 .scoreContainersub {
     float: left;
-    clear: auto;
+    clear: both;
 }
 
-.crystalImage {
-    margin: 10px;
+#crystals {
+    float: left;
+    clear: both;
 }
